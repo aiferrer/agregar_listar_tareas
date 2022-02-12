@@ -34,7 +34,7 @@ class Tareas {
           return this._listado;       
           
     }
-
+    
     // Tarea 10
     listadoCompleto (){  
         const listadoCompleto = this.listadoArr;        
@@ -47,15 +47,37 @@ class Tareas {
             else
                 console.log(`${numTarea} ${listadoCompleto[i].desc} :: ` + 'Completada'.green);               
        }
+    }
 
 
+    // Tarea 11
+    listarPendientesCompletadas(completada = true){
+        let indice = 0;
+            
+        this.listadoArr.forEach(elem => {
+            const {desc, completadoEn} = elem;
+            const estado = (completadoEn) ? 'Completado'.green : 'Pendiente'.red;
+          
+                if(completada )
+                {
+                    if(completadoEn){
+                        indice += 1;
+                        console.log(`${indice} ${desc} :: ${estado}`);
+                    }                          
+                }
+                else{
+                    if(!completadoEn){
+                        indice += 1;
+                        console.log(`${indice} ${desc} :: ${estado}`); 
 
-  
-
-      //  return listComp;
+                    }                   
+                }
+                
+            });
 
     }
 
+ 
    
 }
 
