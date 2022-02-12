@@ -16,9 +16,9 @@ const main = async () => {
     const tareasDB = leerDB();   
 
     if(tareasDB){      
-        // Aqui debo cargar las tareas
+        tareas.cargarTareasArch(tareasDB);
     }  
-    await pausa(); 
+
 
     do {
         opt = await inquireMenu();            
@@ -30,7 +30,8 @@ const main = async () => {
                 break;
 
             case '2':
-               console.log(tareas.listadoArr);          
+                tareas.listadoCompleto();       
+           
         }
          
        
